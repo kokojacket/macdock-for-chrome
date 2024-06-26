@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "Web Dock",
+  "version": "1.0",
+  "description": "在所有网页显示一个类似Mac的dock栏用于收藏网页",
+  "permissions": [
+    "storage",
+    "tabs",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "css": ["styles.css"],
+      "js": ["content.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "options_page": "options.html"
+}

@@ -1,0 +1,89 @@
+#web-dock {
+  position: fixed;
+  bottom: -100px; /* 初始状态在屏幕外 */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 10px !important; /* 强制所有角为圆角 */
+  padding: 5px 15px;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  transition: transform 0.3s ease-out, bottom 0.3s ease-out;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+#web-dock.active {
+  bottom: 10px; /* 弹出时的位置 */
+}
+
+#web-dock-trigger {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 20px;
+  z-index: 9998;
+}
+
+#dock-items {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#dock-items li {
+  margin: 0 5px;
+  position: relative;
+}
+
+#dock-items li a {
+  display: block;
+}
+
+#dock-items li img {
+  width: 32px;
+  height: 32px;
+  border-radius: 5px;
+  transition: all 0.2s ease;
+}
+
+#dock-items li:hover img {
+  transform: scale(1.5);
+  margin-top: -10px;
+}
+
+.remove-item {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  font-size: 10px;
+  line-height: 1;
+  cursor: pointer;
+  display: none;
+}
+
+#dock-items li:hover .remove-item {
+  display: block;
+}
+
+#add-to-dock {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px;
+}
